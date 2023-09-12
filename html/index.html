@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная раббота № 1</title>
+    <link rel="stylesheet" href="../css/styles.css">
+<!--    <script src="validate.js"></script>-->
+</head>
+<body>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th colspan=2 class="header">Яхонтов Максим Витальевич P3220 Вариант 3013</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <canvas id="canvas_plot" width="500" height="500"></canvas>
+                <script src="../js/index.js"></script>
+            </td>
+        </tr>
+        <tr class="header">
+            <td>
+                <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <!--ячейка ввода данных-->
+                        <td>
+                            <form id="myForm" action="../php/check_point.php" method="GET" onsubmit="return validateForm();">
+
+                                <div>
+                                    <label>Введите значение X:</label>
+                                    <label><input type="radio" name="x" value="-2" required>-2</label>
+                                    <label><input type="radio" name="x" value="-1.5">-1.5</label>
+                                    <label><input type="radio" name="x" value="-1">-1</label>
+                                    <label><input type="radio" name="x" value="-0.5">-0.5</label>
+                                    <label><input type="radio" name="x" value="0">0</label>
+                                    <label><input type="radio" name="x" value="0.5">0.5</label>
+                                    <label><input type="radio" name="x" value="1">1</label>
+                                    <label><input type="radio" name="x" value="1.5">1.5</label>
+                                    <label><input type="radio" name="x" value="2">2</label>
+                                </div>
+
+                                <div>
+                                    <label for="y">Введите значение Y (от -3 до 5):</label>
+                                    <input type="text" name="y" id="y" required>
+                                </div>
+
+                                <div>
+                                    <label for="r">Введите значение R (от 2 до 5):</label>
+                                    <input type="text" name="r" id="r" required>
+                                </div>
+                                <input type="submit" value="Проверить">
+                            </form>
+                        </td>
+                        <td>
+                             Отображение результатов
+                            <table border="1" cellpadding="0" cellspacing="0" width="80%" class="result-table" id="resultTable">
+                                <tr>
+                                    <th>X</th>
+                                    <th>Y</th>
+                                    <th>R</th>
+                                    <th>Результат</th>
+                                    <th>Время</th>
+                                    <th>Время выполнения</th>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="../js/validate.js"></script>
+</body>
+</html>
