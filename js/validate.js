@@ -43,8 +43,6 @@ function sendDataToServer(data) {
     const xValue = data.x;
     const yValue = data.y;
     const rValue = data.r;
-    // Засекаем время до отправки запроса
-    const startTime = performance.now();
 
     // Создаем объект FormData для отправки данных на сервер
     const formData = new FormData();
@@ -57,13 +55,10 @@ function sendDataToServer(data) {
         method: "GET"
     })
         .then(response => response.text())
-        .then(result => {
-
-            const endTime = performance.now();
-            const executionTime = endTime - startTime;
+        .then(data => {
 
             // Перенаправьте пользователя на страницу results.html с параметрами
-            window.location.href = `../html/results.html?x=${xValue}&y=${yValue}&r=${rValue}&result=${result}&executionTime=${executionTime}`;
+            window.location.href = `../html/results.html?${data}`;
         })
         .catch(error => {
             console.error("Ошибка:", error);

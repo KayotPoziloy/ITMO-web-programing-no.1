@@ -1,6 +1,4 @@
 <?php
-//session_start();
-
 // Функция проверки попадения точки в область
 function checkPoint($x, $y, $r) {
     // Проверка условия попадения
@@ -35,6 +33,7 @@ if($x !== null && $y !== null && $r !== null) {
     if (is_numeric($x) && is_numeric($y) && is_numeric($r)) {
         if ($r < 2 || $r > 5) {
             echo "Значение R должно быть в диапазоне от 2 до 5.";
+            exit;
         }   else {
             // Вызываем функцию для проверки попадания точки
             $result = checkPoint($x, $y, $r);
@@ -42,13 +41,15 @@ if($x !== null && $y !== null && $r !== null) {
             $executionTime = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]; // Время выполнения скрипта
 
             // Вывод результатов в HTML-форму
-            echo "$result&currentTime=$currentTime&executionTime=$executionTime";
+            echo "x=$x&y=$y&r=$r&result=$result&currentTime=$currentTime&executionTime=$executionTime";
         }
     } else {
         echo "Некорректные данные";
+        exit;
     }
 } else {
     echo "Не все данные были переданы";
+    exit;
 }
 
 
