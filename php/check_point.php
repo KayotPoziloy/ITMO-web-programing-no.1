@@ -42,14 +42,7 @@ if($x !== null && $y !== null && $r !== null) {
             $executionTime = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]; // Время выполнения скрипта
 
             // Вывод результатов в HTML-форму
-            echo '<tr>';
-            echo '<td>'.$x.'</td>';
-            echo '<td>'.$y.'</td>';
-            echo '<td>'.$r.'</td>';
-            echo '<td>'.$result.'</td>';
-            echo '<td>'.$currentTime.'</td>';
-            echo '<td>'.$executionTime.'</td>';
-            echo '</tr>';
+            echo $result;
         }
     } else {
         echo "Некорректные данные";
@@ -57,3 +50,5 @@ if($x !== null && $y !== null && $r !== null) {
 } else {
     echo "Не все данные были переданы";
 }
+
+
