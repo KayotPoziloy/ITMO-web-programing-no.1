@@ -42,7 +42,7 @@ if($x !== null && $y !== null && $r !== null) {
             $executionTime = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]; // Время выполнения скрипта
 
             // Вывод результатов в HTML-форму
-            echo $result;
+            echo "$result&currentTime=$currentTime&executionTime=$executionTime";
         }
     } else {
         echo "Некорректные данные";
